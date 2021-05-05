@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ENV APP_NAME="Docker Solder"
 ENV APP_ENV=production
-ENV APP_KEY=9FIFvciix66cd4v3q6qbCN31AiMcpip8YT
+#ENV APP_KEY=9FIFvciix66cd4v3q6qbCN31AiMcpip8YT
 ENV DB_CONNECTION=mysql
 
 RUN apt update -y
