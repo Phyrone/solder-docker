@@ -1,0 +1,30 @@
+version: '2.3'
+services: 
+    solder:
+        build: .
+        depends_on: 
+            - db
+        volumes: 
+            - ./app:/app/
+        ports: 
+            - 8080:80
+        environment: 
+            APP_ENV: production
+            DB_CONNECTION: mysql
+            DB_HOST: db
+            DB_PORT: "3306"
+            DB_DATABASE: solder
+            DB_USERNAME: solder
+            DB_PASSWORD: 6Ae61LcAUuPGHeG8fcEH5W
+            
+    db:
+        image: mysql:5.7
+        volumes:
+        - ./db_data:/var/lib/mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: bPTWRqNE0rQ2vFWmzLH7QR
+          MYSQL_DATABASE: solder
+          MYSQL_USER: solder
+          MYSQL_PASSWORD: 6Ae61LcAUuPGHeG8fcEH5W
+        
