@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as build
+FROM ubuntu:22.04 as build
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update -y
 RUN apt install -y git php7.4 php7.4-bcmath php7.4-cli php7.4-curl php7.4-fpm php7.4-json php7.4-mbstring php7.4-mysql php-redis php7.4-xml php7.4-zip
@@ -11,7 +11,7 @@ RUN composer self-update
 WORKDIR /build/
 RUN git clone https://github.com/TechnicPack/TechnicSolder.git .
 RUN composer install --no-dev --no-interaction
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 ENV APP_NAME="Docker Solder"
