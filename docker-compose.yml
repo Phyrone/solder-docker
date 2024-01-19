@@ -18,7 +18,7 @@ services:
             DB_PASSWORD: 6Ae61LcAUuPGHeG8fcEH5W
             
     db:
-        image: mysql:8.0
+        image: mysql:8.3
         volumes:
         - ./db_data:/var/lib/mysql
         restart: always
